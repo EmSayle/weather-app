@@ -1,33 +1,18 @@
-# React Bootstrap
+# React Weather App
 
-React boilerplate project for Manchester Codes' projects.
+A simple online weather application using ReactJs, cloned from **MCR Codes React Boilerplate** and using their **Manchester Codes Weather API**.
 
-## Getting Started
 
-### Clone down this repository (replace `<your_project_name>`:
 
-```bash
-git clone git@github.com:MCRcodes/react-bootstrap.git <your_project_name>
-```
+### Installation
 
-### Install dependencies
+Install the dependencies and devDependencies and start the server.
 
-```bash
-npm install
-```
-
-### Start up the application:
-
-```bash
-npm start
+```sh
+$ git clone git@github.com:EmSayle/weather-app.git
+$ cd weather-app
+$ npm install
+$ npm start
 ```
 
 ### Visit `localhost:8080` in your browser.
-
-You should see a **Hello World** message.
-
-### Change the rendered output
-
-You can change what is mounted to the DOM in `src/index.jsx`.
-
-It might be a good idea to make an `App` component inside `App.jsx` (will likely handle your layout and routing), and to mount this to the DOM.
