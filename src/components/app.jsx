@@ -5,6 +5,7 @@ import ForecastDetails from './ForecastDetails';
 import axios from 'axios';
 
 import '../styles/app.scss';
+import SearchForm from './SearchForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends React.Component {
     });
   }
 
-  getForecast(city) {
+  getForecast = (city) => {
     axios.get(`https://mcr-codes-weather.herokuapp.com/forecast?city=${city}`)
       .then((res) => {
         this.setState({
@@ -42,7 +43,7 @@ class App extends React.Component {
           forecasts: res.data.forecasts,
         });
       });
-  }
+  };
 
   render() {
     const selectedDate = this.state.selectedDate;
@@ -55,7 +56,12 @@ class App extends React.Component {
           city={this.state.location.city}
           country={this.state.location.country}
         />
-        <ForecastSummaries forecasts={this.state.forecasts} onForecastSelect={this.handleForecastSelect} />
+        <SearchForm onSearch={this.getForecast} />
+        <br />
+        <ForecastSummaries
+          forecasts={this.state.forecasts}
+          onForecastSelect={this.handleForecastSelect}
+        />
         {
           selectedForecast && <ForecastDetails forecast={selectedForecast} />
           }
